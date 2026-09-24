@@ -1,224 +1,247 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Certificate Verification</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#f4f6f9;
-min-height:100vh;
-display:flex;
-flex-direction:column;
-}
-
-/* Splash Screen */
-
-#splash{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#ffffff;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:99999;
-transition:opacity .8s;
-}
-
-.glow{
-width:80px;
-height:80px;
-border-radius:60%;
-display:flex;
-justify-content:center;
-align-items:center;
-animation:pulse 5s infinite;
-}
-
-.glow img{
-width:50px;
-height:auto;
-}
-
-@keyframes pulse{
-
-0%{
-box-shadow:0 0 15px rgba(0,91,156,.3);
-transform:scale(1);
-}
-
-50%{
-box-shadow:0 0 70px rgba(0,91,156,1);
-transform:scale(1.08);
-}
-
-100%{
-box-shadow:0 0 15px rgba(0,91,156,.3);
-transform:scale(1);
-}
-
-}
-
-header{
-background:#004B8D;
-padding:2px;
-}
-
-.logo{
-height:60px;
-display:block;
-}
-
-.container{
-max-width:300px;
-margin:auto;
-padding:20px 10px;
-flex:1;
-}
-
-.card{
-background:#fff;
-padding:20px;
-border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-max-width:500px;
-margin:auto;
-}
-
-.certificate{
-width:100%;
-display:block;
-border-radius:12px;
-}
-footer{
-margin-top:auto;
-background:#005A9C;
-color:#fff;
-padding:2px;
-text-align:center;
-}
-
-.buttons{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:5px;
-margin-bottom:15px;
-}
-
-.btn{
-display:inline-block;
-padding:4px 9px;
-background:transparent;
-border:none;
-border-radius:12px;
-color:#fff;
-text-decoration:none;
-font-weight:bold;
-font-size:7px;
-box-shadow:0 3px 8px rgba(0,0,0,.2);
-transition:.3s;
-}
-
-.btn:hover{
-background:#fff;
-color:#005A9C;
-}
-
-.copy{
-margin-top:5px;
-font-size:5px;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة باك زيب للمقاولات | Pak Zaib Contracting Co.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #0d233a;
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo h1 {
+            font-size: 20px;
+            color: #e6a100;
+        }
+        .logo p {
+            font-size: 12px;
+            color: #ccc;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #e6a100;
+        }
+        .hero {
+            background: linear-gradient(rgba(13, 35, 58, 0.85), rgba(13, 35, 58, 0.85)), url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+            color: #e6a100;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 750px;
+            margin: 0 auto 25px;
+            color: #e0e0e0;
+        }
+        .btn {
+            background-color: #e6a100;
+            color: #0d233a;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #ffbe2e;
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #0d233a;
+            margin-bottom: 40px;
+            position: relative;
+            font-weight: 700;
+        }
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: #e6a100;
+            display: block;
+            margin: 10px auto 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid #e6a100;
+        }
+        .card h3 {
+            color: #0d233a;
+            margin-bottom: 15px;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .info-table th, .info-table td {
+            padding: 15px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+        .info-table th {
+            background-color: #0d233a;
+            color: white;
+            width: 35%;
+        }
+        footer {
+            background-color: #0a1b2d;
+            color: #aaa;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
 </head>
-
 <body>
 
-<div id="splash">
-<div class="glow">
-<img src="logo-blue.png" alt="Logo">
-</div>
-</div>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>شركة باك زيب للمقاولات</h1>
+            <p>Pak Zaib Contracting Company</p>
+        </div>
+        <nav>
+            <a href="#about">من نحن</a>
+            <a href="#services">خدماتنا</a>
+            <a href="#info">بيانات الشركة</a>
+            <a href="#contact">اتصل بنا</a>
+        </nav>
+    </header>
 
-<header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>شركة باك زيب للمقاولات شركة شخص واحد</h2>
+        <p>التميز والجودة في تنفيذ أعمال المقاولات العامة والانشاءات بالمملكة العربية السعودية</p>
+        <a href="#contact" class="btn">اتصل بنا الان</a>
+    </section>
 
-<img src="0003.png" class="logo">
+    <!-- About Section -->
+    <section class="container" id="about">
+        <h2 class="section-title">من نحن</h2>
+        <p style="text-align: center; max-width: 850px; margin: 0 auto; color: #555; font-size: 17px;">
+            شركة باك زيب للمقاولات هي شركة مسجلة رسمياً في المملكة العربية السعودية، متخصصة في تقديم حلول المقاولات العامة، الأعمال المدنية، والمشاريع الإنشائية وفق أعلى معايير الجودة والسلامة.
+        </p>
+    </section>
 
-</header>
+    <!-- Services Section -->
+    <section class="container" id="services">
+        <h2 class="section-title">خدماتنا</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>المقاولات العامة</h3>
+                <p>تنفيذ وتنظيم كافة المشاريع السكنية والتجارية والصناعية بأعلى معايير الكفاءة والجودة.</p>
+            </div>
+            <div class="card">
+                <h3>أعمال البنية التحتية والإنشاءات</h3>
+                <p>تقديم خدمات الإنشاءات المدنية والبنية التحتية بأعلى درجات الاحترافية والالتزام بالمواصفات.</p>
+            </div>
+            <div class="card">
+                <h3>إدارة المشاريع الإنشائية</h3>
+                <p>إشراف متكامل وضبط جودة العمل لضمان تسليم المشاريع في المواعيد المحددة بكل دقة.</p>
+            </div>
+        </div>
+    </section>
 
-<div class="container">
+    <!-- Credentials Section -->
+    <section class="container" id="info">
+        <h2 class="section-title">بيانات الشركة الرسمية</h2>
+        <table class="info-table">
+            <tr>
+                <th>اسم الشركة الرسمي</th>
+                <td>شركة باك زيب للمقاولات شركة شخص واحد</td>
+            </tr>
+            <tr>
+                <th>English Name</th>
+                <td>Pak Zaib Contracting Company</td>
+            </tr>
+            <tr>
+                <th>رقم السجل التجاري (CR No.)</th>
+                <td>2055131309</td>
+            </tr>
+            <tr>
+                <th>الرقم الموحد (Unified No.)</th>
+                <td>7025787206</td>
+            </tr>
+            <tr>
+                <th>اشتراك غرفة الشرقية (Chamber ID)</th>
+                <td>330532</td>
+            </tr>
+            <tr>
+                <th>الرئيس التنفيذي (CEO)</th>
+                <td>Mr. Imran Hussain (عمران حسين غلام رسول)</td>
+            </tr>
+            <tr>
+                <th>رقم الهاتف</th>
+                <td>0138300000</td>
+            </tr>
+        </table>
+    </section>
 
-<div class="card">
+    <!-- Contact Section -->
+    <section class="container" id="contact">
+        <h2 class="section-title">اتصل بنا</h2>
+        <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <p style="margin-bottom: 12px;"><strong>رقم التواصل:</strong> 0138300000</p>
+            <p style="margin-bottom: 12px;"><strong>الموقع:</strong> المنطقة الشرقية، المملكة العربية السعودية</p>
+            <p><strong>التوثيق الإلكتروني:</strong> بوابة أعمال غرفة الشرقية (Asharqia Chamber)</p>
+        </div>
+    </section>
 
-<img src="1633265936658.jpg" class="certificate">
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 شركة باك زيب للمقاولات (Pak Zaib Contracting Co.). جميع الحقوق محفوظة.</p>
+    </footer>
 
-</div>
-
-</div>
-<footer>
-
-<div class="buttons">
-
-<a class="btn" href="tel:920024555">
-📞920024555 Call
-</a>
-
-<a class="btn" href="mailto:info@es.chamber.org.sa">
-📧 Email
-</a>
-
-<a class="btn" href="https://es.chamber.org.sa">
-🌐 Website
-</a>
-
-</div>
-
-<div class="copy">
-
-© Copyright Asharqia Chamber
-
-<br><br>
-
-العربية | English (US)
-
-</div>
-
-</footer>
-
-<script>
-
-window.addEventListener("load", function(){
-
-setTimeout(function(){
-
-document.getElementById("splash").style.opacity="0";
-
-setTimeout(function(){
-
-document.getElementById("splash").style.display="none";
-
-},100);
-
-},2500);
-
-});
-
-</script>
 </body>
-
 </html>
